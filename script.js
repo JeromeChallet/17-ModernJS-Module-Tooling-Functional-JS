@@ -23,3 +23,30 @@ add('apple', 2);
 //console.log(price);
 
 console.log(cart);
+
+//////////////////TOP LEVEL AWAIT ES2022//////////////////
+// since es2022 we can now use the await keyword outside of async function
+// this only works in modules and blocks the entire module
+// const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+// const data = await res.json();
+// console.log(data);
+
+const getLastPost = async function () {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const data = await res.json();
+  console.log(data);
+
+  return { title: data.at(-1).title, text: data.at(-1).body };
+};
+
+const lastPost = getLastPost();
+console.log('lastPost', lastPost);
+
+// not better to use top level await
+//lastPost.then(last => console.log(last));
+
+const lastPost2 = await getLastPost();
+console.log('lastPost2', lastPost2);
+
+// if a module imports a module that has a top level await
+// then the importing module will wait for the imported module to finish the blocking code
