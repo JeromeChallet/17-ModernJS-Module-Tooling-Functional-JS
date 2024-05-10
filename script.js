@@ -86,6 +86,7 @@ console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);
 */
 
+/*
 // Nodejs is a way to run JS on a web server outside of a browser
 // Nodejs is the world repo for JS
 // we export from a module using export.
@@ -99,3 +100,57 @@ export.addToCart = function (product, quantity) {
   
 // Import
 const {addToCart} = require('./shoppingCart.js')
+*/
+
+//////////////////NPM//////////////////
+import add, { cart } from './shoppingCart.js';
+add('pizza', 2);
+add('bread', 2);
+add('apple', 2);
+
+console.log(cart);
+// initialize the project by creating a package.json
+//npm init
+// this will create a "dependencies" field in the package.json
+// with the name of the installed package and its version number
+// all those packages get intalled in the node_modules folder
+//npm install packageName - npm i packageName
+// install all teh packages listed from the package.json
+// npm i
+//import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es';
+
+const state = {
+  cart: [
+    { product: 'bread', quantity: 5 },
+    { product: 'pizza', quantity: 5 },
+  ],
+};
+
+// copy the state object using js module (cloneDeep)
+const stateClone = Object.assign({}, state);
+const stateDeepClone = cloneDeep(state);
+
+//state.user.loggedIn = false;
+console.log(stateClone);
+
+console.log(stateDeepClone);
+// the goal of parcel is to bundle the mdoules together ( cloneDeep, script, shoppingCart )
+// npx parcel index.html
+// installing with sudo gives more permissions
+// sudo npm i parcel
+// npm i packageName@1.2.3
+// parcel creates a dist folder (distribution) because its the code in this folder that will be sent to the users
+
+// with parcel whenever we change one of the module it will trigger a rebuild
+// and that new modified bundle will get injected automatically into the browser
+// but it wont reload the page, it maintains the state
+if (module.hot) {
+  module.hot.accept();
+}
+
+// npm script is another way to run installed packages in the command line
+// in the package.son the script has been renamed to start so the command is now
+// npm run start
+// removed the line   "main": "clean.js", and then ran npm run build to build the solution
+// npm i parcel -g will install the packages globally

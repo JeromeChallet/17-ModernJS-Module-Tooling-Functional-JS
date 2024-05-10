@@ -1,0 +1,27 @@
+{
+  "name": "17-modernjs-module-tooling-functional-js",
+  "version": "1.0.0",
+  "description": "",
+
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeromeChallet/17-ModernJS-Module-Tooling-Functional-JS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeromeChallet/17-ModernJS-Module-Tooling-Functional-JS/issues"
+  },
+  "homepage": "https://github.com/JeromeChallet/17-ModernJS-Module-Tooling-Functional-JS#readme",
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
