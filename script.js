@@ -184,3 +184,5 @@ import 'core-js/stable';
 
 // polyfilling async functions
 import 'regenerator-runtime/runtime';
+
+//////////////////CLEAN MODERN JAVASCRIPT//////////////////
