@@ -154,3 +154,33 @@ if (module.hot) {
 // npm run start
 // removed the line   "main": "clean.js", and then ran npm run build to build the solution
 // npm i parcel -g will install the packages globally
+
+//////////////////BABEL POLYFILLING//////////////////
+// parcel automatically use babel to tanspile the code
+// a plugin is a js feature that we want to configure
+// babel
+class Person {
+  #greeting = 'hey';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.#greeting}, ${this.name}`);
+  }
+}
+
+const jerome = new Person('jerome');
+
+console.log('jerome' ?? null);
+
+console.log(cart.find(el => el.quantity >= 2));
+// babel can only transpile es6 syntax
+Promise.resolve('TEST').then(x => console.log(x));
+
+// polyfilling
+// when running polyfilling, it will polyfille everything
+import 'core-js/stable';
+// we can cherry pick what funciton to polyfile
+// import 'core-js/stable/array/find';
+// import 'core-js/stable/promise';
+
+// polyfilling async functions
+import 'regenerator-runtime/runtime';
