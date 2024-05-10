@@ -2,7 +2,6 @@
   "name": "17-modernjs-module-tooling-functional-js",
   "version": "1.0.0",
   "description": "",
-
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
@@ -18,8 +17,10 @@
   },
   "homepage": "https://github.com/JeromeChallet/17-ModernJS-Module-Tooling-Functional-JS#readme",
   "dependencies": {
+    "core-js": "^3.37.0",
     "leaflet": "^1.9.4",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "regenerator-runtime": "^0.14.1"
   },
   "devDependencies": {
     "parcel": "^2.12.0"
