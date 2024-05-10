@@ -52,6 +52,7 @@ console.log('lastPost2', lastPost2);
 // if a module imports a module that has a top level await
 // then the importing module will wait for the imported module to finish the blocking code
 */
+/*
 // we create an EFI
 const ShoppingCart2 = (function () {
   const cart = [];
@@ -83,3 +84,18 @@ ShoppingCart2.addToCart('apple', 4);
 ShoppingCart2.addToCart('pizza', 2);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);
+*/
+
+// Nodejs is a way to run JS on a web server outside of a browser
+// Nodejs is the world repo for JS
+// we export from a module using export.
+// Export
+export.addToCart = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(
+      `${quantity} ${product} added to cart, shipping cost is ${shippingCost}`
+    );
+};
+  
+// Import
+const {addToCart} = require('./shoppingCart.js')
